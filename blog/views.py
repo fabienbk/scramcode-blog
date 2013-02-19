@@ -2,12 +2,14 @@ from blog.models import get_last_posts, get_latest_post_id, get_post, get_next_p
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 
 def home(request):    
     return show_post(request, get_latest_post_id())
 
 
 @cache_page(60 * 15)
+@vary_on_cookie
 def show_post(request, post_id):
     if post_id != None:
         post_list = get_last_posts(False, 10)
