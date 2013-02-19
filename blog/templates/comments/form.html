@@ -1,0 +1,27 @@
+{% load comments i18n %}
+<form action="{% comment_form_target %}" method="post" class="form-horizontal">
+	{% csrf_token %} 
+	<div>
+		<input type="hidden" name="next" value="/post/{{ post.id }}/{{ post.slug }}/" />
+	</div>
+	
+	{% for field in form %} {% if field.is_hidden %}
+	<div>{{ field }}</div>
+	{% endif %} {% endfor %}
+
+    <small>Name</small>
+	<input class="input-block-level" style="margin-bottom:5px;" type="text" id="id_name" name="name" placeholder="Name"  maxlength="50">
+	<small>Email</small>	
+    <input class="input-block-level" style="margin-bottom:5px;" type="text" id="id_email" name="email" placeholder="Email">
+    <small>URL</small>
+	<input class="input-block-level" style="margin-bottom:5px;" type="text" id="id_url" name="url" placeholder="URL">
+	<small>Comment</small>	
+    <textarea class="input-block-level" style="margin-bottom:5px;" id="id_comment" rows="10" cols="80" name="comment" placeholder="Comment"></textarea>
+		
+	<p style="display: none;">
+		<label for="id_honeypot">Please leave this blank</label> <input type="text" name="honeypot" id="id_honeypot" />
+	</p>
+	
+    <button type="submit" class="btn btn-primary pull-right" name="post" class="submit-post" value="Post">Post</button>
+    
+</form>

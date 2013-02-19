@@ -1,0 +1,32 @@
+{% extends "admin/base_admin.html" %} {% block content %}
+
+<form action="{% url list_post %}" method="post">
+<table class="table table-condensed table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Date</th>
+			<th>Title</th>			
+			<th>Published?</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>		
+		{% csrf_token %}		
+		{% for post in post_list %}
+		<tr>
+			<td>{{ post.id }}</td>						
+			<td>{{ post.creation_date }}</td>
+			<td>{{ post.title }}</td>
+			<td>{{ post.online }}</td>
+			<td><div class="btn-group">
+					<button class="btn btn-mini" name="edit" value="{{ post.id }}">Edit</button>					
+					<button class="btn btn-mini" name="toggle" value="{{ post.id }}">Toggle</button>
+					<button class="btn btn-mini" name="delete" value="{{ post.id }}">Delete</button>
+				</div></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Blog Administration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <style>body { padding-top: 60px; }</style>    
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/">Blog Administration</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="{% url edit_post %}">New Post</a>
+                            </li>
+                            <li>
+                                <a href="{% url list_post %}">List</a>
+                            </li>
+                            <li>
+                                <a href="/gallery/">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="{% url logout %}">Log out</a>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <script src="/static/js/jquery.min.js" type="text/javascript" />
+        <script src="/static/js/bootstrap.min.js" type="text/javascript" />
+    </body>
+</html>

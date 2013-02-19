@@ -1,0 +1,41 @@
+{% extends "admin/base_admin.html" %} {% block content %}
+<div class="span8">
+
+	<fieldset>
+		<legend>Edit Post</legend>
+		<form method="post" action="{% url edit_post %}">
+			{% csrf_token %}
+			<input type="hidden" name="post_id" value="{{ form.post_id.value }}" />
+			
+			<div class="control-group">
+				<div class="controls">
+					<input class="input-block-level" type="text" id="inputEmail" placeholder="Post Title" name="title" value="{{ form.title.value }}" />
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<textarea class="input-block-level" rows="30" id="inputPassword" placeholder="Post" style="font-family: Monospace; font-size: 12px;" name="text">{{ form.text.value }}</textarea>
+				</div>
+			</div>
+
+			<div class="form-actions">
+				<button type="submit" name="save-publish" class="btn btn-primary"><i class="icon-user icon-white"></i> Save and publish</button>
+				<button type="submit" name="save" class="btn"><i class="icon-edit"></i> Save</button>
+			</div>
+
+		</form>
+	</fieldset>
+</div>
+
+<div class="span4">
+	<div class="well well-large">
+		<ul class="nav nav-list">			
+			<li class="nav-header">Last 20 articles</li>
+			
+			{% for post in last_post_list %}
+			<li><a href="/post/{{ post.id }}/{{post.slug}}/">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock %}
