@@ -164,8 +164,6 @@ MARKUP_FIELD_TYPES = (
 )
 
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        #'LOCATION': 'unique-snowflake'
-    }
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': 'unix:/home/fbenoit/memcached.socket'    
 }
