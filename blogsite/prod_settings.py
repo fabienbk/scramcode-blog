@@ -18,7 +18,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'scramblog',
         'USER': 'scramblog_user',                     
         'PASSWORD': 'Ej0hD0Pzrr0k',
