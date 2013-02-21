@@ -7,7 +7,6 @@ from django.views.decorators.vary import vary_on_cookie
 def home(request):    
     return show_post(request, get_latest_post_id())
 
-
 @cache_page(60 * 15)
 @vary_on_cookie
 def show_post(request, post_id):

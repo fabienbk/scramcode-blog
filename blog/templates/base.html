@@ -7,8 +7,7 @@
         <meta name="description" content="A blog about java, game and web development.">
         <meta name="author" content="Fabien Benoit-Koch">
         <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
-        <link type="text/css" rel="stylesheet" href="/static/css/pygments-css/tango.css"/>		
-        <style>body { padding-top: 60px; } p { text-align: justify } p img { display: block; margin-left: auto; margin-right: auto } </style>                  
+        <link type="text/css" rel="stylesheet" href="/static/css/pygments-css/tango.css"/>		                         
     </head>
     <body>
     	<script type="text/javascript">var switchTo5x=true;</script>
@@ -26,7 +25,6 @@
                             <li class="{{nav.home.active}}">
                                 <a href="/">Home</a>
                             </li>
-
                             {% if user.is_authenticated %}
                             <li class="{{nav.about.active}}">
                                 <a href="/list">Administration</a>
