@@ -3,12 +3,12 @@
 {% block content %}
 <div class="span8">
         
-    <div class="btn-group pull-right" style="margin: 10px">
+    <div class="btn-group pull-right" style="margin: 20px 0px 0px">
         <a class="btn" href="/post/{{ post.id }}/next/"><i class="icon-chevron-left"></i></a>                
         <a class="btn" href="/post/{{ post.id }}/previous/"><i class="icon-chevron-right"></i></a>
     </div>
         
-    <div class="page-header" style="margin: -8px 0px 20px">
+    <div class="page-header" style="margin: -8px 5px 20px">
         <h3>{{ post.title }} <small>{{ post.creation_date|date:"j-M-Y" }}{% if user.is_authenticated %} <a href="/edit/?edit={{ post.id }}">[edit]</a>{% endif %}</small></h3>                    
     </div>    
 

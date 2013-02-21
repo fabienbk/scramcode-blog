@@ -2,7 +2,7 @@ import os
 import markdown
 
 # Environement specific (to change)
-HOME_DIRECTORY = '/home/fabien/workspace/blogsite/'
+HOME_DIRECTORY = '/home/fabien/blogsite/'
 
 # install: Markdown, Pygment
 
@@ -165,7 +165,6 @@ MARKUP_FIELD_TYPES = (
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        #'LOCATION': 'unique-snowflake'
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
