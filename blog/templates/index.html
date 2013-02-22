@@ -26,12 +26,12 @@
         var disqus_developer = 0; // or 1 based on if you're looking to skip URL authentication
         
         /* * * DON'T EDIT BELOW THIS LINE * * */
-        function load_disqus() {
+        (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }();
-    </script>       
+        })();
+    </script>
               
 	<div style="margin: 0px 0px 60px"></div>  
 </div>
