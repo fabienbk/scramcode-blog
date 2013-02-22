@@ -9,7 +9,7 @@
     </div>
         
     <div class="page-header" style="margin: -8px 5px 20px">
-        <h3>{{ post.title }} <small>{{ post.creation_date|date:"j-M-Y" }}{% if user.is_authenticated %} <a href="/edit/?edit={{ post.id }}">[edit]</a>{% endif %}</small></h3>                    
+        <h3><a href="/post/{{post.id}}/{{post.slug}}/">{{ post.title }}</a> <small>{{ post.creation_date|date:"j-M-Y" }}{% if user.is_authenticated %} <a href="/edit/?edit={{ post.id }}">[edit]</a>{% endif %}</small></h3>                    
     </div>    
     
     <div style="margin: 0px 0px 40px">
