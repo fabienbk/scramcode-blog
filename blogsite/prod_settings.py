@@ -7,7 +7,7 @@ HOME_DIRECTORY = '/home/fbenoit/webapps/blog/blogsite/'
 # install: Markdown, Pygment
 
 # Django settings for blog project.
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
